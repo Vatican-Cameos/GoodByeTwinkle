@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.QuickContactBadge;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     EditText etSSIDPassword;
-    TextView tvLowBudgetButton;
+    Button tvLowBudgetButton;
     String ssidAndPassword = null;
 
     @Override
