@@ -33,7 +33,17 @@ public class WifiAccessManager {
     public static WifiConfiguration getWifiApConfiguration() {
         WifiConfiguration conf = new WifiConfiguration();
         conf.SSID = SSID;
-        conf.allowedKeyManagement.set(Integer.parseInt("12345678"));
+        conf.preSharedKey = SSID;
+        conf.status = WifiConfiguration.Status.ENABLED;
+        conf.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+        conf.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+        conf.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+        conf.allowedPairwiseCiphers
+                .set(WifiConfiguration.PairwiseCipher.TKIP);
+        conf.allowedPairwiseCiphers
+                .set(WifiConfiguration.PairwiseCipher.CCMP);
+        conf.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+        conf.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
         return conf;
     }
 }
